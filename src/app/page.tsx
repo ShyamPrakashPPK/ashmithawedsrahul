@@ -9,7 +9,7 @@ import Hero from "@/components/Hero";
 import SaveTheDate from "@/components/SaveTheDate";
 import Gallery from "@/components/Gallery";
 import Closing from "@/components/Closing";
-
+import Countdown from "@/components/Countdown";
 import MusicPlayer from "@/components/MusicPlayer";
 
 export default function Home() {
@@ -43,6 +43,7 @@ export default function Home() {
     <>
       <Hero />
       <SaveTheDate />
+      <Countdown />
       <Gallery />
       <Closing />
     </>
