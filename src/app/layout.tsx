@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Montserrat, Yesteryear , Great_Vibes} from "next/font/google";
 import "./globals.css";
-import MusicPlayer from "@/components/MusicPlayer";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-heading",
@@ -53,7 +52,6 @@ export default function RootLayout({
     >
       <body className="font-body bg-accent-light text-dark">
         {children}
-        <MusicPlayer />
       </body>
     </html>
   );

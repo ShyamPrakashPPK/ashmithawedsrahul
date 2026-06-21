@@ -3,12 +3,26 @@ import { useEffect, useRef, useState } from 'react';
 import { Play, Pause, Volume2 } from 'lucide-react';
 import Image from 'next/image';
 
-export default function MusicPlayer() {
+interface MusicPlayerProps {
+    shouldPlay: boolean;
+}
+
+export default function MusicPlayer({ shouldPlay }: MusicPlayerProps) {
     const audioRef = useRef<HTMLAudioElement>(null);
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
+    useEffect(() => {
+        const audio = audioRef.current;
+
+        if (!audio) return;
+
+        if (shouldPlay) {
+            audio.play();
+            setIsPlaying(true);
+        }
+    }, [shouldPlay]);
 
     // useEffect(() => {
     //     const audio = audioRef.current;
@@ -38,57 +52,60 @@ export default function MusicPlayer() {
     //         audio.removeEventListener('timeupdate', updateProgress);
     //     };
     // }, []);
-    useEffect(() => {
-        const audio = audioRef.current;
-        if (!audio) return;
+    // useEffect(() => {
+    //     const audio = audioRef.current;
+    //     if (!audio) return;
 
-        const updateProgress = () => {
-            if (audio.duration) {
-                setProgress((audio.currentTime / audio.duration) * 100);
-                setCurrentTime(audio.currentTime);
-            }
-        };
+    //     const updateProgress = () => {
+    //         if (audio.duration) {
+    //             setProgress((audio.currentTime / audio.duration) * 100);
+    //             setCurrentTime(audio.currentTime);
+    //         }
+    //     };
 
-        const handleLoadedMetadata = () => {
-            setDuration(audio.duration);
-        };
+    //     const handleLoadedMetadata = () => {
+    //         setDuration(audio.duration);
+    //     };
 
-        audio.addEventListener("timeupdate", updateProgress);
-        audio.addEventListener("loadedmetadata", handleLoadedMetadata);
+    //     audio.addEventListener("timeupdate", updateProgress);
+    //     audio.addEventListener("loadedmetadata", handleLoadedMetadata);
 
-        audio.load();
+    //     audio.load();
 
-        const attemptPlay = async () => {
-            try {
-                await audio.play();
-                setIsPlaying(true);
-            } catch (err) {
-                console.log("Autoplay blocked");
-            }
-        };
+    //     const attemptPlay = async () => {
+    //         try {
+    //             await audio.play();
+    //             setIsPlaying(true);
+    //         } catch (err) {
+    //             console.log("Autoplay blocked");
+    //         }
+    //     };
 
-        attemptPlay();
+    //     attemptPlay();
 
-        const unlockAudio = async () => {
-            try {
-                await audio.play();
-                setIsPlaying(true);
-            } catch (err) { }
-        };
+    //     const unlockAudio = async () => {
+    //         try {
+    //             await audio.play();
+    //             setIsPlaying(true);
+    //         } catch (err) { }
+    //     };
 
-        document.addEventListener("click", unlockAudio, { once: true });
-        document.addEventListener("touchstart", unlockAudio, { once: true });
-        document.addEventListener("scroll", unlockAudio, { once: true });
+    //     document.addEventListener("click", unlockAudio, { once: true });
+    //     document.addEventListener("touchstart", unlockAudio, { once: true });
+    //     document.addEventListener("scroll", unlockAudio, { once: true });
 
-        return () => {
-            audio.removeEventListener("timeupdate", updateProgress);
-            audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
+    //     return () => {
+    //         audio.removeEventListener("timeupdate", updateProgress);
+    //         audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
 
-            document.removeEventListener("click", unlockAudio);
-            document.removeEventListener("touchstart", unlockAudio);
-            document.removeEventListener("scroll", unlockAudio);
-        };
-    }, []);
+    //         document.removeEventListener("click", unlockAudio);
+    //         document.removeEventListener("touchstart", unlockAudio);
+    //         document.removeEventListener("scroll", unlockAudio);
+    //     };
+    // }, []);
+
+
+
     const togglePlay = () => {
         const audio = audioRef.current;
         if (!audio) return;
@@ -185,7 +202,7 @@ export default function MusicPlayer() {
                 ref={audioRef}
                 src="/music/love.mp3"
                 loop
-                autoPlay
+                
                 preload="auto"
             />
         </div>

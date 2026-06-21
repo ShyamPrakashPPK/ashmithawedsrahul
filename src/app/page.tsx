@@ -1,15 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import Loader from "@/components/Loader";
 import SmoothScroll from "@/components/SmoothScroll";
+
 import Hero from "@/components/Hero";
 import SaveTheDate from "@/components/SaveTheDate";
 import Gallery from "@/components/Gallery";
 import Closing from "@/components/Closing";
 
+import MusicPlayer from "@/components/MusicPlayer";
+
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const [playMusic, setPlayMusic] = useState(false);
 
   useEffect(() => {
     if (loading) {
@@ -26,6 +31,14 @@ export default function Home() {
     };
   }, [loading]);
 
+  const handleOpenInvitation = () => {
+    setPlayMusic(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 1200);
+  };
+
   const sections = (
     <>
       <Hero />
@@ -37,7 +50,14 @@ export default function Home() {
 
   return (
     <>
-      {loading && <Loader onComplete={() => setLoading(false)} />}
+      {loading && (
+        <Loader
+          onComplete={handleOpenInvitation}
+        />
+      )}
+
+      <MusicPlayer shouldPlay={playMusic} />
+
       <main className={loading ? "h-screen overflow-hidden" : undefined}>
         {loading ? sections : <SmoothScroll>{sections}</SmoothScroll>}
       </main>
