@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Montserrat, Yesteryear } from "next/font/google";
+import { Cormorant_Garamond, Montserrat, Yesteryear , Great_Vibes} from "next/font/google";
 import "./globals.css";
+import MusicPlayer from "@/components/MusicPlayer";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-heading",
@@ -12,6 +13,13 @@ const montserrat = Montserrat({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+});
+
+const greatVibes = Great_Vibes({
+  variable: "--font-great-vibes",
+  subsets: ["latin"],
+  weight: ["400"],           // Great Vibes only has 400
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -40,11 +48,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${montserrat.variable} ${yesteryear.variable} antialiased`}
+      className={`${cormorant.variable} ${montserrat.variable} ${yesteryear.variable} ${greatVibes.variable} antialiased`}
       suppressHydrationWarning
     >
       <body className="font-body bg-accent-light text-dark">
         {children}
+        <MusicPlayer />
       </body>
     </html>
   );
