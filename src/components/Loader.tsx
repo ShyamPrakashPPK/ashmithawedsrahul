@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface LoaderProps {
   onComplete: () => void;
@@ -42,56 +43,26 @@ export default function Loader({ onComplete }: LoaderProps) {
             duration: 0.8,
           }}
         >
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="
-              font-[var(--font-yesteryear)]
-              text-white
-              text-6xl
-              md:text-8xl
-              lg:text-[8rem]
-              leading-none
-            "
+            className="flex justify-center"
           >
-            Ashmitha
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="
-              font-[var(--font-yesteryear)]
-              text-white/80
-              text-lg
-              md:text-xl
-              tracking-[0.5em]
-              my-3
-            "
-          >
-            WEDS
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 1,
-              delay: 0.2,
-            }}
-            className="
-              font-[var(--font-yesteryear)]
-              text-white
-              text-6xl
-              md:text-8xl
-              lg:text-[8rem]
-              leading-none
-            "
-          >
-            Rahul
-          </motion.h1>
+            <Image
+              src="/images/ar.png"
+              alt="Ashmitha & Rahul"
+              width={800}
+              height={800}
+              priority
+              className="
+        w-[250px]
+      h-auto
+      object-contain
+    "
+    sizes="(max-width: 768px) 100vw, 800px"
+            />
+          </motion.div>
 
           <motion.button
             initial={{
