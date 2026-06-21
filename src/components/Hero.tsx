@@ -63,7 +63,7 @@ export default function Hero() {
     >
       {/* Desktop / Tablet Image */}
       <motion.div
-        className="absolute -top-1/2 left-0 hidden h-[200vh] w-full md:block"
+        className="absolute -top-[100px] left-0 hidden h-[150vh] w-full md:block"
         style={{ y: imageY }}
       >
         <Image
@@ -78,7 +78,7 @@ export default function Hero() {
 
       {/* Mobile Image */}
       <motion.div
-        className="absolute -top-1/2 left-0 h-[200vh] w-full md:hidden"
+        className="absolute  left-0 h-[100vh] w-full md:hidden"
         style={{ y: imageY }}
       >
         <Image
