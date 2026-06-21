@@ -8,16 +8,25 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.9, ease: "easeOut" as const },
+    transition: {
+      duration: 0.9,
+      ease: "easeOut" as const,
+    },
   },
 };
 
@@ -29,15 +38,51 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const contentY = useTransform(scrollYProgress, [0, 0.5], ["0%", "-15%"]);
+  const imageY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", "30%"]
+  );
+
+  const contentOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    [1, 0]
+  );
+
+  const contentY = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    ["0%", "-15%"]
+  );
 
   return (
-    <section ref={sectionRef} className="relative h-screen overflow-hidden">
-      <motion.div className="absolute inset-0  h-[200%] w-full" style={{ y: imageY }}>
+    <section
+      ref={sectionRef}
+      className="relative h-screen overflow-hidden"
+    >
+      {/* Desktop / Tablet Image */}
+      <motion.div
+        className="absolute -top-1/2 left-0 hidden h-[200vh] w-full md:block"
+        style={{ y: imageY }}
+      >
         <Image
           src="/images/heromain.png"
+          alt="Ashmitha and Rahul"
+          fill
+          priority
+          className="object-cover"
+          sizes="(max-width: 767px) 0vw, 100vw"
+        />
+      </motion.div>
+
+      {/* Mobile Image */}
+      <motion.div
+        className="absolute -top-1/2 left-0 h-[200vh] w-full md:hidden"
+        style={{ y: imageY }}
+      >
+        <Image
+          src="/images/heromainmobile.png"
           alt="Ashmitha and Rahul"
           fill
           priority
@@ -46,11 +91,16 @@ export default function Hero() {
         />
       </motion.div>
 
+      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
+      {/* Content */}
       <motion.div
         className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white"
-        style={{ opacity: contentOpacity, y: contentY }}
+        style={{
+          opacity: contentOpacity,
+          y: contentY,
+        }}
       >
         <motion.div
           variants={containerVariants}
@@ -67,9 +117,9 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="font-heading my-2 text-3xl font-light text-accent-rose md:text-5xl"
+            className="my-2 font-heading text-3xl font-light text-accent-rose md:text-5xl"
           >
-            &amp;
+            &
           </motion.p>
 
           <motion.p
@@ -79,8 +129,12 @@ export default function Hero() {
             Rahul
           </motion.p>
 
-          <motion.div variants={itemVariants} className="mt-8 flex flex-col items-center gap-3">
+          <motion.div
+            variants={itemVariants}
+            className="mt-8 flex flex-col items-center gap-3"
+          >
             <div className="h-px w-16 bg-accent-rose/60" />
+
             <p className="font-body text-xs font-light uppercase tracking-[0.4em] text-accent-light/90 md:text-sm">
               Forever Begins
             </p>
