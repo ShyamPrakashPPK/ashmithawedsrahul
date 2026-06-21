@@ -35,6 +35,9 @@ body {
   font-family: var(--font-body), sans-serif;
 }
 
+.font-script {
+  font-family: var(--font-yesteryear), cursive;
+}
 /* Loader hollow text */
 .text-stroke-white {
   -webkit-text-stroke: 1.5px white;

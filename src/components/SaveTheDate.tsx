@@ -4,10 +4,8 @@ import { motion } from "framer-motion";
 
 export default function SaveTheDate() {
   return (
-    <section className="relative overflow-hidden bg-primary px-6 py-24 md:py-32">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-accent-light/20 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-accent-light/20 to-transparent" />
-
+    <section className="relative overflow-hidden bg-[#3d1010] px-6 py-24 md:py-32">
+   
       <motion.div
         className="glass-card relative z-10 mx-auto max-w-lg rounded-2xl px-8 py-12 text-center text-accent-light md:px-12 md:py-16"
         initial={{ opacity: 0, y: 60 }}

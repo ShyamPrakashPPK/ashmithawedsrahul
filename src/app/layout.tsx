@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Montserrat } from "next/font/google";
+import { Cormorant_Garamond, Montserrat, Yesteryear } from "next/font/google";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -26,6 +26,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const yesteryear = Yesteryear({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-yesteryear",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${montserrat.variable} antialiased`}
+      className={`${cormorant.variable} ${montserrat.variable} ${yesteryear.variable} antialiased`}
       suppressHydrationWarning
     >
       <body className="font-body bg-accent-light text-dark">

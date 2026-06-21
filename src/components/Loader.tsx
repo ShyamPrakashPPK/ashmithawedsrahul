@@ -7,8 +7,6 @@ interface LoaderProps {
   onComplete: () => void;
 }
 
-const LINES = ["ASHMITHA", "WEDS", "RAHUL"];
-
 export default function Loader({ onComplete }: LoaderProps) {
   const [fadeOut, setFadeOut] = useState(false);
   const completedRef = useRef(false);
@@ -20,36 +18,70 @@ export default function Loader({ onComplete }: LoaderProps) {
   };
 
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setFadeOut(true), 3000);
-    const fallbackTimer = setTimeout(finish, 4000);
+    const fadeTimer = setTimeout(() => setFadeOut(true), 3500);
+    const fallbackTimer = setTimeout(finish, 4500);
+
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(fallbackTimer);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [onComplete]);
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-primary"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#3d1010]"
       initial={{ opacity: 1 }}
       animate={{ opacity: fadeOut ? 0 : 1 }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
+      transition={{ duration: 1 }}
       onAnimationComplete={() => {
         if (fadeOut) finish();
       }}
     >
-      <div className="flex flex-col items-center gap-1 md:gap-2">
-        {LINES.map((line) => (
-          <span
-            key={line}
-            className="loader-fill-text font-body text-4xl font-light tracking-[0.35em] md:text-6xl lg:text-7xl"
-            data-text={line}
-          >
-            {line}
-          </span>
-        ))}
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5 }}
+        className="text-center"
+      >
+        <h1
+          className="
+            font-[var(--font-yesteryear)]
+            text-white
+            text-6xl
+            md:text-8xl
+            lg:text-[8rem]
+            leading-none
+          "
+        >
+          Ashmitha
+        </h1>
+
+        <p
+          className="
+            font-[var(--font-yesteryear)]
+            text-white/80
+            text-lg
+            md:text-xl
+            tracking-[0.5em]
+            my-3
+          "
+        >
+          WEDS
+        </p>
+
+        <h1
+          className="
+            font-[var(--font-yesteryear)]
+            text-white
+            text-6xl
+            md:text-8xl
+            lg:text-[8rem]
+            leading-none
+          "
+        >
+          Rahul
+        </h1>
+      </motion.div>
     </motion.div>
   );
 }

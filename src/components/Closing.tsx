@@ -53,7 +53,7 @@ function Particles() {
 
 export default function Closing() {
   return (
-    <section className="relative overflow-hidden bg-primary px-6 py-28 md:py-36">
+    <section className="relative overflow-hidden bg-[#3d1010] px-6 py-28 md:py-36">
       <Particles />
 
       <motion.div
