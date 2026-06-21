@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CalendarDays, Clock3, MapPin, Heart } from "lucide-react";
+import Link from "next/link";
 
 export default function WeddingDetails() {
   return (
@@ -27,18 +28,17 @@ export default function WeddingDetails() {
           {/* Bride */}
           <div>
             <h2
-              className="text-5xl text-white md:text-7xl"
-              style={{ fontFamily: "var(--font-yesteryear)" }}
+              className="font-great-vibes text-5xl text-white md:text-7xl"
             >
               Ashmitha Purushothaman
             </h2>
 
-            <p className="mt-4 text-sm uppercase tracking-[0.3em] text-[#f3d0ca]">
+            <p className="mt-4 text-[10px] uppercase tracking-[0.3em] text-[#f3d0ca]">
               Daughter of
             </p>
 
-            <p className="mt-2 text-lg font-medium text-white md:text-xl">
-              Purushothaman M &amp; Sheeba Purushothaman
+            <p className="mt-2 text-sm font-medium text-white md:text-xl">
+              Purushothaman M &amp; <br /> Sheeba Purushothaman
             </p>
           </div>
 
@@ -56,18 +56,17 @@ export default function WeddingDetails() {
           {/* Groom */}
           <div>
             <h2
-              className="text-5xl text-white md:text-7xl"
-              style={{ fontFamily: "var(--font-yesteryear)" }}
+              className="font-great-vibes text-5xl text-white md:text-7xl"
             >
               Rahul Sujathan
             </h2>
 
-            <p className="mt-4 text-sm uppercase tracking-[0.3em] text-[#f3d0ca]">
+            <p className="mt-4 text-[10px] uppercase tracking-[0.3em] text-[#f3d0ca]">
               Son of
             </p>
 
-            <p className="mt-2 text-lg font-medium text-white md:text-xl">
-              Sujathan NG &amp; Prasanna Kumary Sujathan
+            <p className="mt-2 text-sm font-medium text-white md:text-xl">
+              Sujathan NG &amp; <br /> Prasanna Kumary Sujathan
             </p>
           </div>
         </div>
@@ -114,7 +113,8 @@ export default function WeddingDetails() {
           </div>
 
           {/* Venue */}
-          <div>
+          <div className="cursor-pointer">
+            <Link href="https://maps.app.goo.gl/Miy8vWVxRXZ5kd3t9" target="_blank">
             <MapPin
               size={28}
               className="mx-auto mb-4 text-[#f3d0ca]"
@@ -125,10 +125,13 @@ export default function WeddingDetails() {
             </p>
 
             <h3 className="mt-2 text-2xl text-white">
-              Vasava Cliff House
-            </h3>
+              Wasava Cliff House
+              </h3>
+            </Link>
           </div>
+          
         </div>
+        
       </motion.div>
     </section>
   );

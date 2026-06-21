@@ -35,7 +35,11 @@ body {
   font-family: var(--font-body), sans-serif;
 }
 
-.font-script {
+.font-great-vibes {
+  font-family: var(--font-great-vibes), cursive;
+}
+
+.font-yesteryear {
   font-family: var(--font-yesteryear), cursive;
 }
 /* Loader hollow text */
