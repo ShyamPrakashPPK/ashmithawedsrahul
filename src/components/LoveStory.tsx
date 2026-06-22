@@ -109,7 +109,7 @@ export default function LoveStory() {
                     {story.map((line, index) => (
                         <motion.p
                             key={index}
-                            className="font-great-vibes text-2xl leading-relaxed text-[#fdf4f1] md:text-5xl"
+                            className="font-medium text-base leading-relaxed text-[#fdf4f1] md:text-2xl"
                             initial={{ opacity: 0, y: 35 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.7 }}
