@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import RosePetals from "@/components/Roses";
 
 const GALLERY_IMAGES = [
   { src: "/images/gallery1.png", alt: "Ashmitha and Rahul moment 1" },
@@ -57,26 +58,33 @@ function GalleryItem({
 
 export default function Gallery() {
   return (
-    <section className="bg-accent-light px-4 py-20 md:px-8 md:py-28">
-      <motion.h2
-        className="font-heading mb-12 text-center text-4xl font-light tracking-wide text-primary md:mb-16 md:text-5xl"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        Moments of Us
-      </motion.h2>
+    <section className="relative overflow-hidden bg-accent-light px-4 py-20 md:px-8 md:py-28">
 
-      <div className="mx-auto max-w-6xl columns-2 gap-3 md:columns-3 md:gap-4">
-        {GALLERY_IMAGES.map((image, index) => (
-          <GalleryItem
-            key={image.src}
-            src={image.src}
-            alt={image.alt}
-            index={index}
-          />
-        ))}
+      <RosePetals />
+
+      <div className="relative z-10">
+
+        <motion.h2
+          className="font-heading mb-12 text-center text-4xl font-light tracking-wide text-primary md:mb-16 md:text-5xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          Moments of Us
+        </motion.h2>
+
+        <div className="mx-auto max-w-6xl columns-2 gap-3 md:columns-3 md:gap-4">
+          {GALLERY_IMAGES.map((image, index) => (
+            <GalleryItem
+              key={image.src}
+              src={image.src}
+              alt={image.alt}
+              index={index}
+            />
+          ))}
+        </div>
+
       </div>
     </section>
   );

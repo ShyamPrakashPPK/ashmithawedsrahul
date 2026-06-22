@@ -121,3 +121,44 @@ body {
     opacity: 0;
   }
 }
+
+
+.rose-petal {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+
+  background-image: url("/images/rose.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  will-change: transform;
+}
+
+.love-particle {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(243, 208, 202, 0.6);
+  animation: loveFall linear infinite;
+}
+
+@keyframes loveFall {
+  from {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(calc(100vh + 100px));
+    opacity: 0;
+  }
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const PARTICLES = [
   { id: 0, left: "8%", delay: "0s", duration: "14s", size: "3px" },
@@ -53,9 +54,37 @@ function Particles() {
 
 export default function Closing() {
   return (
-    <section className="relative overflow-hidden bg-[#3d1010] px-6 py-28 md:py-36">
+    <section className="relative overflow-hidden px-6 py-28 md:py-36">
+
+      {/* Desktop Background */}
+      <div className="absolute inset-0 hidden md:block">
+        <Image
+          src="/images/hand.png"
+          alt="Wedding background"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
+
+      {/* Mobile Background */}
+      <div className="absolute inset-0 md:hidden">
+        <Image
+          src="/images/handmobile.png"
+          alt="Wedding background"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
+
+      {/* Dark Overlay */}
+      <div className="absolute bg-[#210e0b]/70  inset-0" />
+
+      {/* Particles */}
       <Particles />
 
+      {/* Content */}
       <motion.div
         className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-6 text-center text-accent-light"
         initial={{ opacity: 0, y: 40 }}

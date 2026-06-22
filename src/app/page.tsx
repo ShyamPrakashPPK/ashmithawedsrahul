@@ -11,6 +11,7 @@ import Gallery from "@/components/Gallery";
 import Closing from "@/components/Closing";
 import Countdown from "@/components/Countdown";
 import MusicPlayer from "@/components/MusicPlayer";
+import LoveStory from "@/components/LoveStory";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -44,6 +45,7 @@ export default function Home() {
       <Hero />
       <SaveTheDate />
       <Countdown />
+      <LoveStory />
       <Gallery />
       <Closing />
     </>
