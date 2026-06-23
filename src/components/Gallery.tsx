@@ -30,6 +30,12 @@ const GALLERY_IMAGES = [
     note: "Blessed together",
     featured: true,
   },
+  {
+    src: "/images/mirror.png",
+    alt: "Mirror",
+    note: "Moments of Us",
+    featured: true,
+  },
 
   {
     src: "/images/gallery1.png",
@@ -90,7 +96,7 @@ function GalleryItem({
   return (
     <motion.div
       ref={ref}
-      className={`group relative mb-4 break-inside-avoid overflow-hidden rounded-2xl
+      className={`group relative overflow-hidden rounded-2xl
       ${featured
           ? "border border-[#d7b8b0]/40 shadow-[0_10px_40px_rgba(0,0,0,0.15)]"
           : ""
@@ -110,13 +116,13 @@ function GalleryItem({
         style={{ y }}
         whileHover={{ scale: 1.03 }}
         transition={{ duration: 0.5 }}
+        className="relative aspect-[4/5] overflow-hidden"
       >
         <Image
           src={src}
           alt={alt}
-          width={800}
-          height={1000}
-          className="h-auto w-full object-cover transition-transform duration-700"
+          fill
+          className="object-cover transition-transform duration-700"
           sizes="(max-width:768px) 50vw, 33vw"
         />
       </motion.div>
@@ -178,7 +184,7 @@ export default function Gallery() {
           Moments of Us
         </motion.h2>
 
-        <div className="mx-auto max-w-6xl columns-2 gap-4 md:columns-3">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 md:grid-cols-3">
           {GALLERY_IMAGES.map((image, index) => (
             <GalleryItem
               key={image.src}
