@@ -31,7 +31,7 @@ export default function WeddingDetails() {
           {/* Bride */}
           <div>
             <h2
-              className="font-mrs-saint-delafield text-5xl text-white md:text-7xl"
+              className="font-ephesis text-5xl text-white md:text-7xl"
             >
               Ashmitha Purushothaman
             </h2>
@@ -59,7 +59,7 @@ export default function WeddingDetails() {
           {/* Groom */}
           <div>
             <h2
-              className="font-mrs-saint-delafield text-5xl text-white md:text-7xl"
+              className="font-ephesis text-5xl text-white md:text-7xl"
             >
               Rahul Sujathan
             </h2>

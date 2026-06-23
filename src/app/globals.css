@@ -46,6 +46,11 @@ body {
 .font-yesteryear {
   font-family: var(--font-yesteryear), cursive;
 }
+
+.font-ephesis {
+  font-family: var(--font-ephesis), cursive;
+}
+
 /* Loader hollow text */
 .text-stroke-white {
   -webkit-text-stroke: 1.5px white;
