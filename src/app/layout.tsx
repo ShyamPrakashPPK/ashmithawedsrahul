@@ -39,6 +39,9 @@ export const metadata: Metadata = {
   title: "Ashmitha & Rahul",
   description:
     "Join Ashmitha and Rahul as they celebrate their wedding on 12 July 2026 at Vasava Cliff House.",
+  icons: {
+    icon: "/images/favicon.ico",
+  },
   openGraph: {
     title: "Ashmitha & Rahul — Wedding Invitation",
     description:
