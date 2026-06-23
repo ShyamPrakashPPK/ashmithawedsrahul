@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ashmitha & Rahul — Wedding Invitation",
     description:
-      "Join us on 12 July 2026 at Vasava Cliff House. Muhurtham: 9:30 AM – 10:40 AM.",
+      "Join us on 12 July 2026 at Wasava Cliff House. Muhurtham: 9:30 AM – 10:40 AM.",
     type: "website",
   },
 };

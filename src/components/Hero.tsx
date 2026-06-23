@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -139,6 +140,26 @@ export default function Hero() {
               Forever Begins
             </p>
           </motion.div>
+        </motion.div>
+        <motion.div
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
+          animate={{
+            y: [0, 10, 0],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <p className="mb-2 text-[10px] uppercase tracking-[0.3em] text-white/80">
+            Scroll Down
+          </p>
+
+          <ChevronDown
+            size={28}
+            className="text-white/90"
+          />
         </motion.div>
       </motion.div>
     </section>
