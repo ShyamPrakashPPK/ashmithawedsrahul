@@ -5,6 +5,13 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import RosePetals from "@/components/Roses";
 
+interface GalleryImage {
+  src: string;
+  alt: string;
+  note?: string;
+  featured?: boolean;
+}
+
 const GALLERY_IMAGES = [
   // {
   //   src: "/images/firstmeet.png",
@@ -199,8 +206,6 @@ export default function Gallery() {
               src={image.src}
               alt={image.alt}
               index={index}
-              note={image.note}
-              featured={image.featured}
             />
           ))}
         </div>
