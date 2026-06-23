@@ -5,41 +5,49 @@ import WeddingParticles from "@/components/Particles";
 
 
 const story = [
-    "He came across this girl",
+   "He saw her on a matrimonial site,",
+
     "And wanted to know more.",
 
     "One Instagram search.",
+
     "To an unexpected message.",
 
     "At first, she let it pass.",
+
     "Then a 'Hey'.",
 
     "Sharing their thoughts,",
+
     "Dreams and ambitions.",
 
     "From endless conversations.",
+
     "To an effortless connection.",
 
     "Laughing together.",
+
     "Miles apart, yet closer every day.",
 
     "One day,",
+
     "He flew from London to India.",
 
-    "What started online.",
-    "Became beautifully real.",
+    "Soon, their families met.",
 
-    "Soon, our families met.",
     "And their happiness meant everything.",
 
     "With love and blessings,",
+
     "A new chapter began.",
 
     "From a matrimony profile.",
-    "To finding my forever person.",
+
+    "To finding their forever person.",
 
     "And now,",
-    "We're getting married.",
+
+    "They’re getting married.",
 ];
 
 export default function LoveStory() {

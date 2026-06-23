@@ -6,64 +6,72 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import RosePetals from "@/components/Roses";
 
 const GALLERY_IMAGES = [
-  {
-    src: "/images/firstmeet.png",
-    alt: "First Meet",
-    note: "The day everything changed",
-    featured: true,
-  },
-  {
-    src: "/images/pennukanal1.png",
-    alt: "Pennukanal",
-    note: "Families met, hearts smiled",
-    featured: true,
-  },
-  {
-    src: "/images/pennukanal2.png",
-    alt: "Pennukanal",
-    note: "A beautiful beginning",
-    featured: true,
-  },
-  {
-    src: "/images/temple.png",
-    alt: "Temple Visit",
-    note: "Blessed together",
-    featured: true,
-  },
-  {
-    src: "/images/mirror.png",
-    alt: "Mirror",
-    note: "Moments of Us",
-    featured: true,
-  },
+  // {
+  //   src: "/images/firstmeet.png",
+  //   alt: "First Meet",
+  //   note: "The day everything changed",
+  //   featured: true,
+  // },
+  // {
+  //   src: "/images/pennukanal1.png",
+  //   alt: "Pennukanal",
+  //   note: "Families met, hearts smiled",
+  //   featured: true,
+  // },
+  // {
+  //   src: "/images/pennukanal2.png",
+  //   alt: "Pennukanal",
+  //   note: "A beautiful beginning",
+  //   featured: true,
+  // },
+  // {
+  //   src: "/images/temple.png",
+  //   alt: "Temple Visit",
+  //   note: "Blessed together",
+  //   featured: true,
+  // },
+  // {
+  //   src: "/images/mirror.png",
+  //   alt: "Mirror",
+  //   note: "Moments of Us",
+  //   featured: true,
+  // },
 
   {
     src: "/images/gallery1.png",
     alt: "Memory 1",
   },
   {
-    src: "/images/gallery2.png",
+    src: "/images/gallery3.png",
     alt: "Memory 2",
   },
   {
-    src: "/images/gallery3.png",
+    src: "/images/gallery4.png",
     alt: "Memory 3",
   },
   {
-    src: "/images/gallery4.png",
+    src: "/images/gallery10.png",
     alt: "Memory 4",
   },
   {
-    src: "/images/gallery5.png",
+    src: "/images/gallery9.png",
     alt: "Memory 5",
   },
   {
-    src: "/images/gallery6.png",
+    src: "/images/gallery7.png",
     alt: "Memory 6",
   },
   {
-    src: "/images/gallery7.png",
+    src: "/images/gallery6.png",
     alt: "Memory 7",
+  },
+  {
+    src: "/images/gallery5.png",
+    alt: "Memory 8",
+  },
+  {
+    src: "/images/gallery8.png",
+    alt: "Memory 9",
   },
 ];
 

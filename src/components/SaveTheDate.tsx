@@ -50,7 +50,7 @@ export default function WeddingDetails() {
             <div className="h-px w-24 bg-white/20" />
 
             <p className="my-4 text-sm font-medium uppercase tracking-[0.6em] text-[#f3d0ca]">
-              Weds
+              With
             </p>
 
             <div className="h-px w-24 bg-white/20" />
