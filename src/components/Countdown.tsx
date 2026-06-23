@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import RosePetals from "@/components/Roses";
 
 export default function Countdown() {
     const weddingDate = new Date("2026-07-12T09:30:00");
@@ -55,8 +56,9 @@ export default function Countdown() {
     ];
 
     return (
-        <section className="py-16">
-            <div className="max-w-5xl mx-auto px-6 text-center">
+        <section className="py-16 relative overflow-hidden">
+            <RosePetals />
+            <div className="relative z-20 max-w-5xl mx-auto px-6 text-center">
                 <p className="uppercase tracking-[0.3em] text-sm text-primary/70 mb-3">
                     Counting Down To Forever
                 </p>
@@ -70,7 +72,13 @@ export default function Countdown() {
                         <motion.div
                             key={item.label}
                             whileHover={{ y: -5 }}
-                            className="glass-card rounded-3xl p-6"
+                            className="
+                            glass-card 
+                            rounded-3xl
+                            bg-white/5     
+                            backdrop-blur-[10px]
+                            border border-white/10
+                            p-6"
                         >
                             <div className="font-heading text-4xl md:text-6xl text-primary">
                                 {String(item.value).padStart(2, "0")}

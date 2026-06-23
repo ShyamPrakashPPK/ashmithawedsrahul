@@ -1,35 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import WeddingParticles from "@/components/Particles";
 
-const PARTICLES = Array.from({ length: 30 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    delay: `${Math.random() * 8}s`,
-    duration: `${12 + Math.random() * 10}s`,
-    size: `${2 + Math.random() * 4}px`,
-}));
-
-function FallingParticles() {
-    return (
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-            {PARTICLES.map((p) => (
-                <span
-                    key={p.id}
-                    className="love-particle"
-                    style={{
-                        left: p.left,
-                        top: "-20px",
-                        width: p.size,
-                        height: p.size,
-                        animationDelay: p.delay,
-                        animationDuration: p.duration,
-                    }}
-                />
-            ))}
-        </div>
-    );
-}
 
 const story = [
     "He came across this girl",
@@ -76,7 +49,8 @@ export default function LoveStory() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_70%)]" />
 
             {/* Particles */}
-            <FallingParticles />
+
+            <WeddingParticles />
 
             <motion.div
                 className="relative z-10 mx-auto max-w-4xl text-center"
@@ -105,7 +79,8 @@ export default function LoveStory() {
                     Our Love Story
                 </motion.h2>
 
-                <div className="space-y-8">
+                <div className="space-y-8 bg-white/1 backdrop-blur-[5px]  p-6 rounded-3xl" >
+
                     {story.map((line, index) => (
                         <motion.p
                             key={index}

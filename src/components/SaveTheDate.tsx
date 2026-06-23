@@ -3,11 +3,14 @@
 import { motion } from "framer-motion";
 import { CalendarDays, Clock3, MapPin, Heart } from "lucide-react";
 import Link from "next/link";
+import WeddingParticles from "@/components/Particles";
+
 
 export default function WeddingDetails() {
   return (
     <section className="relative overflow-hidden bg-[#3d1010] px-6 py-24 md:py-32">
-      {/* Background Glow */}
+      <WeddingParticles />
+
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_70%)]" />
 
       <motion.div

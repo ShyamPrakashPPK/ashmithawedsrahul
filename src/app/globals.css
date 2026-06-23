@@ -166,3 +166,38 @@ body {
     opacity: 0;
   }
 }
+.wedding-particle {
+  position: absolute;
+  top: -20px;
+
+  border-radius: 9999px;
+
+  background: rgba(243, 208, 202, 0.65);
+  box-shadow: 0 0 8px rgba(243, 208, 202, 0.4);
+
+  animation: weddingFall linear infinite;
+}
+
+@keyframes weddingFall {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    /*
+      100dvh + extra distance
+      makes particles travel much farther
+    */
+    transform: translateY(calc(100dvh + 600px));
+    opacity: 0;
+  }
+}
