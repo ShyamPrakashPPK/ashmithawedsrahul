@@ -58,11 +58,11 @@ function GalleryItem({
 
 export default function Gallery() {
   return (
-    <section className="relative overflow-hidden bg-accent-light px-4 py-20 md:px-8 md:py-28">
+    <section className="relative overflow-hidden bg-accent-light ">
 
       <RosePetals />
 
-      <div className="relative z-10">
+      <div className="relative z-10 bg-white/1 backdrop-blur-[5px]  px-4 py-20 md:px-8 md:py-28">
 
         <motion.h2
           className="font-heading mb-12 text-center text-4xl font-light tracking-wide text-primary md:mb-16 md:text-5xl"
