@@ -39,6 +39,10 @@ body {
   font-family: var(--font-great-vibes), cursive;
 }
 
+.font-mrs-saint-delafield {
+  font-family: var(--font-mrs-saint-delafield), cursive;
+}
+
 .font-yesteryear {
   font-family: var(--font-yesteryear), cursive;
 }

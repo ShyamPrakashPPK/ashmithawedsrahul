@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Montserrat, Yesteryear , Great_Vibes} from "next/font/google";
+import { Cormorant_Garamond, Montserrat, Yesteryear , Great_Vibes , Mrs_Saint_Delafield} from "next/font/google";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -18,6 +18,13 @@ const greatVibes = Great_Vibes({
   variable: "--font-great-vibes",
   subsets: ["latin"],
   weight: ["400"],           // Great Vibes only has 400
+  display: "swap",
+});
+
+const mrsSaintDelafield = Mrs_Saint_Delafield({
+  variable: "--font-mrs-saint-delafield",
+  subsets: ["latin"],
+  weight: ["400"],
   display: "swap",
 });
 
@@ -47,7 +54,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${montserrat.variable} ${yesteryear.variable} ${greatVibes.variable} antialiased`}
+      className={`${cormorant.variable} ${montserrat.variable} ${mrsSaintDelafield.variable} ${yesteryear.variable} ${greatVibes.variable} antialiased`}
       suppressHydrationWarning
     >
       <body className="font-body bg-accent-light text-dark">
