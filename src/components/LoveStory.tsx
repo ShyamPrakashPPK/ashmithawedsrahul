@@ -38,7 +38,7 @@ export default function LoveStory() {
                         transition={{ duration: 0.8 }}
                         className="mb-3 text-center font-body text-[11px] uppercase tracking-[0.45em] text-[#f4d8d1]/70 md:text-xs"
                     >
-                        Our Journey
+                        Love Story
                     </motion.p>
 
                     {/* Title */}
@@ -49,7 +49,7 @@ export default function LoveStory() {
                         transition={{ duration: 1 }}
                         className="font-mrs-saint-delafield text-center text-[4rem] leading-none text-[#fffaf8] md:text-[6.5rem]"
                     >
-                        Our Love Story
+                        How it Started
                     </motion.h2>
 
                     {/* Divider */}
