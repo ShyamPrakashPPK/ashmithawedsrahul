@@ -61,20 +61,8 @@ const GALLERY_IMAGES = [
     alt: "Memory 4",
   },
   {
-    src: "/images/gallery9.png",
-    alt: "Memory 5",
-  },
-  {
-    src: "/images/gallery7.png",
-    alt: "Memory 6",
-  },
-  {
     src: "/images/gallery6.png",
     alt: "Memory 7",
-  },
-  {
-    src: "/images/gallery5.png",
-    alt: "Memory 8",
   },
   {
     src: "/images/gallery8.png",
